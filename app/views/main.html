@@ -1,0 +1,13 @@
+ <header>tic . tac . toe</header>
+  <div class="inner-container">
+      <div class="row clearfix" ng-repeat="row in boxes">
+        <!-- pass box, NOT box.value, into mark
+             (so we are passing in an object, not a primitive) -->
+        <div class="box" ng-click="mark(box);" ng-repeat="box in row">
+          {{ box.value }}
+      </div>
+    </div>
+    </div>
+
+ 
+
