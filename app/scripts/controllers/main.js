@@ -2,12 +2,14 @@
 
 angular.module('newproject1App')
   .controller('MainCtrl', function ($scope, angularFire) {
-	  $scope.boxes = [[{value: ""}, {value: ""}, {value: ""}], 
-		  [{value: ""}, {value: ""}, {value: ""}],
-		  [{value: ""}, {value: ""}, {value: ""}]];
+	  $scope.boxes = [];
 
 	  var database = new Firebase("https://tickytacky.firebaseio.com");
-	  angularFire(database, $scope, "cell");
+	  angularFire(database, $scope, "boxes").then(function() {
+	  	$scope.boxes = [[{value: ""}, {value: ""}, {value: ""}], 
+		  [{value: ""}, {value: ""}, {value: ""}],
+		  [{value: ""}, {value: ""}, {value: ""}]];
+	  });
 	  var myTurn = 1
 
 	  $scope.won = false;
