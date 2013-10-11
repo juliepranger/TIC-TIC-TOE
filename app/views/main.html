@@ -1,9 +1,9 @@
  <header>tic . tac . toe</header>
   <div class="inner-container">
-      <div class="row clearfix" ng-repeat="row in boxes">
+      <div class="row clearfix" ng-repeat="row in boxes[gameId].board">
         <!-- pass box, NOT box.value, into mark
              (so we are passing in an object, not a primitive) -->
-        <div class="box" ng-click="mark(box);" ng-repeat="box in boxes[gameId].board" ng-bind="box.value">
+        <div class="box" ng-click="mark(box);" ng-repeat="box in row" ng-bind="box.value">
       </div>
     </div>
     </div>
