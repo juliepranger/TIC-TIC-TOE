@@ -71,10 +71,10 @@ angular.module('newproject1App')
 
 			$scope.winCond(cell);
 
-			if($scope.player == 'p1')
-				$scope.boxes[$scope.gameId].turn = 'p2';
-			else
-				$scope.boxes[$scope.gameId].turn = 'p1';
+		if($scope.player == 'p1')
+			$scope.boxes[$scope.gameId].turn = 'p2';
+		else
+			$scope.boxes[$scope.gameId].turn = 'p1';
 			};
 
 			//win conditions
@@ -110,7 +110,7 @@ angular.module('newproject1App')
 			var reset = ($scope.queue.gameId = undefined)
 
 			if ($scope.boxes[$scope.gameId].over == true || $scope.boxes[$scope.gameId].cats == true) {
-			  location.reload;
+			  location.reload();
 		};
 
 	};
