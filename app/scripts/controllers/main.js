@@ -104,7 +104,18 @@ angular.module('newproject1App')
 						$scope.boxes[$scope.gameId].cats = true;
 
 			};
-	 })
+
+		$scope.click = function (button) {
+
+			var reset = ($scope.queue.gameId = undefined)
+
+			if ($scope.boxes[$scope.gameId].over == true || $scope.boxes[$scope.gameId].cats == true) {
+			  location.reload;
+		};
+
+	};
+
+})
 
 
 
