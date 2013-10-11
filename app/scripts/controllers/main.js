@@ -7,10 +7,6 @@ angular.module('newproject1App')
 	  $scope.gameId = - 1;
 	  $scope.playerNo = "";
 
-	  // window onload, new game button
-
-	  // $scope.window.onload = 
-
 //set up queue, games
 
 	  var boxesDatabase = new Firebase("https://tickytacky.firebaseio.com/boxes");
@@ -42,9 +38,10 @@ angular.module('newproject1App')
 	  			$scope.queue = {};
 	  			console.log("Player 2's game is: " + $scope.gameId);
 
-	  		}
+	  		};
 	  	});
 	  });
+	 }); 
 
 	//   var myTurn = 1
 
@@ -77,17 +74,18 @@ angular.module('newproject1App')
 
 //win conditions
 
-	$scope.winCond = function(cell) {
-		console.log("line 40");
-	if(($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[0][1].value && $scope.boxes[0][1].value == $scope.boxes[0][2].value ||
-	   ($scope.boxes[1][0].value != "") && $scope.boxes[1][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[1][2].value ||
-	   ($scope.boxes[2][0].value != "") && $scope.boxes[2][0].value == $scope.boxes[2][1].value && $scope.boxes[2][1].value == $scope.boxes[2][2].value ||
-	   ($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[2][2].value ||
-	   ($scope.boxes[2][0].value != "") && $scope.boxes[2][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[0][2].value ||
-	   ($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[1][0].value && $scope.boxes[1][0].value == $scope.boxes[2][0].value ||
-	   ($scope.boxes[0][1].value != "") && $scope.boxes[0][1].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[2][1].value ||
-	   ($scope.boxes[0][2].value != "") && $scope.boxes[0][2].value == $scope.boxes[1][2].value && $scope.boxes[1][2].value == $scope.boxes[2][2].value)
-		$scope.won = true;
+	// $scope.winCond = function(cell) {
+	// 	console.log("line 40");
+	// if(($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[0][1].value && $scope.boxes[0][1].value == $scope.boxes[0][2].value ||
+	//    ($scope.boxes[1][0].value != "") && $scope.boxes[1][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[1][2].value ||
+	//    ($scope.boxes[2][0].value != "") && $scope.boxes[2][0].value == $scope.boxes[2][1].value && $scope.boxes[2][1].value == $scope.boxes[2][2].value ||
+	//    ($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[2][2].value ||
+	//    ($scope.boxes[2][0].value != "") && $scope.boxes[2][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[0][2].value ||
+	//    ($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[1][0].value && $scope.boxes[1][0].value == $scope.boxes[2][0].value ||
+	//    ($scope.boxes[0][1].value != "") && $scope.boxes[0][1].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[2][1].value ||
+	//    ($scope.boxes[0][2].value != "") && $scope.boxes[0][2].value == $scope.boxes[1][2].value && $scope.boxes[1][2].value == $scope.boxes[2][2].value)
+	// 	$scope.won = true;
+	// }
 
 // var cats = 0;
 
@@ -104,11 +102,11 @@ angular.module('newproject1App')
 
 
 
-	if($scope.won == true) 
-			alert("Congratulations! You win!");
-		}
+	// if($scope.won == true) 
+	// 		alert("Congratulations! You win!");
+	// 	}
 
-	})
+	// })
 
 
 
