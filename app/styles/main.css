@@ -7,6 +7,10 @@ html {
   margin: 0 auto;
 }
 
+header {
+  padding-bottom: 30px;
+}
+
 #waiting {
   position: relative;
   background-color: #CBF0F2;
@@ -27,7 +31,7 @@ html {
   font-size: 40px;
   text-align: center;
   margin: 0 auto;
-  top: 200px;
+  top: -212px;
   left: -1px;
   padding: 20px;
 }
@@ -43,7 +47,7 @@ html {
   font-size: 40px;
   text-align: center;
   margin: 0 auto;
-  top: 221px;
+  top: -222px;
   left: 0px;
   padding: 20px;
 }
