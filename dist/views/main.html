@@ -1,0 +1,12 @@
+<header>tic . tac . toe</header>
+  <div class="inner-container">
+  	  <div id="waiting" ng-show="boxes[gameId].waiting">
+      	Waiting for opponent. . .
+      </div>
+      <div class="row clearfix" ng-repeat="row in boxes[gameId].board">
+        <div class="box" ng-click="mark(box);" ng-repeat="box in row" ng-bind="box.value">
+      	</div>
+    </div>
+    <button id="win" ng-click="click(button);" ng-show="boxes[gameId].over">Play Again!</button>
+    <button id="cats" ng-click="click(button);" ng-show="boxes[gameId].cats">Tie! Play Again!</button>
+    </div>
