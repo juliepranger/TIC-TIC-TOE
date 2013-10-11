@@ -31,7 +31,7 @@ angular.module('newproject1App')
 	  			$scope.queue.gameId = $scope.gameId;
 	  			console.log("Player 1's game is: " + $scope.gameId);
 	  		} else {
-	  			console.log("I'm player two!");
+	  			console.log("I'm player 2!");
 	  			$scope.player = "p2";
 
 	  			$scope.gameId = $scope.queue.gameId;
@@ -40,52 +40,46 @@ angular.module('newproject1App')
 
 	  		};
 	  	});
-	  });
-	 }); 
+	  }); //end of Firebase stuff 
 
-	//   var myTurn = 1
+	 //if box is already taken, choose an empty box
+	//box isn't empty? great, we can determine Xs and Os now
 
-	//   $scope.won = false;
+	  $scope.won = false;
 
-	//   $scope.mark = function(cell) {
-	//     // cell is passed in as an object
-	//     // (so it's a reference to the original)
+	  $scope.mark = function(cell) {
 
-	//     //if box is already taken, choose an empty box
-	// if($scope.won == false) {
-	//   if(cell.value == 'X' || cell.value == 'O')
-	//   	alert("Please choose an empty cell!");
+	  	if($scope.boxes[$scope.gameId].over == false && cell.value != "") {
+				alert("Please choose an empty box!")
+			}
+			else {
 
-	//   //box isn't empty? great, we can determine Xs and Os now
+				  if($scope.boxes[$scope.gameId].turnCount % 2 != 1)
+				    cell.value = 'X';
+				  else
+				    cell.value = 'O';
 
-	//   else {
-	// 	  if(myTurn % 2 == 0)
-	// 	    cell.value = 'X';
-	// 	  else
-	// 	    cell.value = 'O';
+				  ++$scope.boxes[$scope.gameId].turnCount
+				};
 
-	// 	  myTurn++
-	// 	  };
-	// 	  console.log("line 32");
-	// 	  $scope.winCond(cell);
-	// 	  console.log("line 34");
-	//   };
-	// }
+					$scope.winCond(cell);
+			};
+			//win conditions
 
-//win conditions
+		$scope.winCond = function(cell) {
 
-	// $scope.winCond = function(cell) {
-	// 	console.log("line 40");
-	// if(($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[0][1].value && $scope.boxes[0][1].value == $scope.boxes[0][2].value ||
-	//    ($scope.boxes[1][0].value != "") && $scope.boxes[1][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[1][2].value ||
-	//    ($scope.boxes[2][0].value != "") && $scope.boxes[2][0].value == $scope.boxes[2][1].value && $scope.boxes[2][1].value == $scope.boxes[2][2].value ||
-	//    ($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[2][2].value ||
-	//    ($scope.boxes[2][0].value != "") && $scope.boxes[2][0].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[0][2].value ||
-	//    ($scope.boxes[0][0].value != "") && $scope.boxes[0][0].value == $scope.boxes[1][0].value && $scope.boxes[1][0].value == $scope.boxes[2][0].value ||
-	//    ($scope.boxes[0][1].value != "") && $scope.boxes[0][1].value == $scope.boxes[1][1].value && $scope.boxes[1][1].value == $scope.boxes[2][1].value ||
-	//    ($scope.boxes[0][2].value != "") && $scope.boxes[0][2].value == $scope.boxes[1][2].value && $scope.boxes[1][2].value == $scope.boxes[2][2].value)
-	// 	$scope.won = true;
-	// }
+			if(($scope.boxes[$scope.gameId].board[0][0].value != "") && $scope.boxes[$scope.gameId].board[0][0].value == $scope.boxes[$scope.gameId].board[0][1].value && $scope.boxes[$scope.gameId].board[0][1].value == $scope.boxes[$scope.gameId].board[0][2].value ||
+		   ($scope.boxes[$scope.gameId].board[1][0].value != "") && $scope.boxes[$scope.gameId].board[1][0].value == $scope.boxes[$scope.gameId].board[1][1].value && $scope.boxes[$scope.gameId].board[1][1].value == $scope.boxes[$scope.gameId].board[1][2].value ||
+		   ($scope.boxes[$scope.gameId].board[2][0].value != "") && $scope.boxes[$scope.gameId].board[2][0].value == $scope.boxes[$scope.gameId].board[2][1].value && $scope.boxes[$scope.gameId].board[2][1].value == $scope.boxes[$scope.gameId].board[2][2].value ||
+		   ($scope.boxes[$scope.gameId].board[0][0].value != "") && $scope.boxes[$scope.gameId].board[0][0].value == $scope.boxes[$scope.gameId].board[1][1].value && $scope.boxes[$scope.gameId].board[1][1].value == $scope.boxes[$scope.gameId].board[2][2].value ||
+		   ($scope.boxes[$scope.gameId].board[2][0].value != "") && $scope.boxes[$scope.gameId].board[2][0].value == $scope.boxes[$scope.gameId].board[1][1].value && $scope.boxes[$scope.gameId].board[1][1].value == $scope.boxes[$scope.gameId].board[0][2].value ||
+		   ($scope.boxes[$scope.gameId].board[0][0].value != "") && $scope.boxes[$scope.gameId].board[0][0].value == $scope.boxes[$scope.gameId].board[1][0].value && $scope.boxes[$scope.gameId].board[1][0].value == $scope.boxes[$scope.gameId].board[2][0].value ||
+		   ($scope.boxes[$scope.gameId].board[0][1].value != "") && $scope.boxes[$scope.gameId].board[0][1].value == $scope.boxes[$scope.gameId].board[1][1].value && $scope.boxes[$scope.gameId].board[1][1].value == $scope.boxes[$scope.gameId].board[2][1].value ||
+		   ($scope.boxes[$scope.gameId].board[0][2].value != "") && $scope.boxes[$scope.gameId].board[0][2].value == $scope.boxes[$scope.gameId].board[1][2].value && $scope.boxes[$scope.gameId].board[1][2].value == $scope.boxes[$scope.gameId].board[2][2].value)
+				$scope.boxes[$scope.gameId].over == true;
+			if($scope.boxes[$scope.gameId].over == true) 
+				alert("Congratulations! You win!");		
+		}
 
 // var cats = 0;
 
@@ -101,12 +95,9 @@ angular.module('newproject1App')
 	// if(($scope.boxes.value != "1" && total = "9") && ($scope.won != true))
 
 
+	 })
 
-	// if($scope.won == true) 
-	// 		alert("Congratulations! You win!");
-	// 	}
 
-	// })
 
 
 
