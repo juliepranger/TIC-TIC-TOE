@@ -6,6 +6,48 @@ html {
   text-align: center;
   margin: 0 auto;
 }
+
+#waiting {
+  position: relative;
+  background-color: #CBF0F2;
+  color: #F52560;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#win {
+  position: relative;
+  background-color: #F52560;
+  opacity: 0.8;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+  top: 200px;
+  left: -1px;
+  padding: 20px;
+}
+
+#cats {
+  position: relative;
+  display: block;
+  background-color: #F52560;
+  opacity: 0.8;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+  top: 221px;
+  left: 0px;
+  padding: 20px;
+}
+
 .inner-container {
   width: 312px;
   margin: 0 auto;
