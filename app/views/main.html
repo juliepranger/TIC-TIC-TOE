@@ -1,7 +1,7 @@
  <header>tic . tac . toe</header>
   <div class="inner-container">
   	  <div id="waiting" ng-show="boxes[gameId].waiting">
-      	Waiting for opponent...
+      	Waiting for opponent. . .
       </div>
       <div class="row clearfix" ng-repeat="row in boxes[gameId].board">
         <div class="box" ng-click="mark(box);" ng-repeat="box in row" ng-bind="box.value">
