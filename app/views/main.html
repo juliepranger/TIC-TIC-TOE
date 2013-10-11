@@ -1,11 +1,14 @@
  <header>tic . tac . toe</header>
   <div class="inner-container">
-      <div class="row clearfix" ng-repeat="row in boxes[gameId].board">
-        <!-- pass box, NOT box.value, into mark
-             (so we are passing in an object, not a primitive) -->
-        <div class="box" ng-click="mark(box);" ng-repeat="box in row" ng-bind="box.value">
+  	  <div id="waiting" ng-show="boxes[gameId].waiting">
+      	Waiting for opponent...
       </div>
+      <div class="row clearfix" ng-repeat="row in boxes[gameId].board">
+        <div class="box" ng-click="mark(box);" ng-repeat="box in row" ng-bind="box.value">
+      	</div>
     </div>
+    <button id="win" ng-show="boxes[gameId].over">Play Again!</button>
+    <button id="cats" ng-show="boxes[gameId].cats">Tie! Play Again!</button>
     </div>
 
  
