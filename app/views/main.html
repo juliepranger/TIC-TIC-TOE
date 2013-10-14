@@ -3,6 +3,12 @@
   	  <div id="waiting" ng-show="boxes[gameId].waiting">
       	Waiting for opponent. . .
       </div>
+      <div id="yourTurn" ng-show="boxes[gameId].yourTurn">
+      	Player 1's turn
+      </div>
+      <div id="opponentTurn" ng-show="boxes[gameId].opponentTurn">
+      	Player 2's turn
+      </div>
       <div class="row clearfix" ng-repeat="row in boxes[gameId].board">
         <div class="box" ng-click="mark(box);" ng-repeat="box in row" ng-bind="box.value">
       	</div>
