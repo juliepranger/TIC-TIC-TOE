@@ -40,6 +40,8 @@ angular.module('newproject1App')
 	  			$scope.queue = {};
 	  			console.log("Player 2's game is: " + $scope.gameId);
 	  			$scope.boxes[$scope.gameId].waiting = false;
+	  			$scope.boxes[$scope.gameId].yourTurn = true;
+	  			$scope.boxes[$scope.gameId].opponentTurn = false;
 
 	  		};
 	  	});
@@ -71,11 +73,17 @@ angular.module('newproject1App')
 
 			$scope.winCond(cell);
 
-		if($scope.player == 'p1')
+		if($scope.player == 'p1') {
 			$scope.boxes[$scope.gameId].turn = 'p2';
-		else
+			$scope.boxes[$scope.gameId].yourTurn = false;
+			$scope.boxes[$scope.gameId].opponentTurn = true;
+		}
+		else {
 			$scope.boxes[$scope.gameId].turn = 'p1';
+			$scope.boxes[$scope.gameId].opponentTurn = false;
+			$scope.boxes[$scope.gameId].yourTurn = true;
 			};
+		};
 
 			//win conditions
 
