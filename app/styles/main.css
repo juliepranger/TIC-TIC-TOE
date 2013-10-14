@@ -2,7 +2,7 @@ html {
   background-color: #CBF0F2;
   color: #42A5B3;
   font-family: 'Julius Sans One', sans-serif;
-  font-size: 80px;
+  font-size: 60px;
   text-align: center;
   margin: 0 auto;
 }
@@ -31,7 +31,7 @@ header {
   font-size: 40px;
   text-align: center;
   margin: 0 auto;
-  top: -212px;
+  top: -200px;
   left: -1px;
   padding: 20px;
 }
@@ -50,6 +50,26 @@ header {
   top: -222px;
   left: 0px;
   padding: 20px;
+}
+
+#yourTurn {
+  position: relative;
+  background-color: #CBF0F2;
+  color: #F52560;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#opponentTurn {
+  position: relative;
+  background-color: #CBF0F2;
+  color: #F52560;
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .inner-container {
